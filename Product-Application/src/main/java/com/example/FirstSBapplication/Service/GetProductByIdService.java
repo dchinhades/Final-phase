@@ -5,6 +5,9 @@ import com.example.FirstSBapplication.Entity.Product;
 import com.example.FirstSBapplication.Repository.ProductRepository;
 import lombok.Data;
 import lombok.RequiredArgsConstructor;
+import org.springframework.http.HttpHeaders;
+import org.springframework.http.MediaType;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
@@ -16,9 +19,20 @@ import java.util.Optional;
 public class GetProductByIdService {
     private final ProductRepository productRepository;
     private final RestTemplate restTemplate;
+    private final HttpHeaders httpHeaders;
 
-    public Optional<Product> getProductById(int id) {
-//        logger.debug("Getting a product by id "+id);
-        return productRepository.findById(id);
+    public ResponseEntity<Object> getProductById(int id) throws Exception {
+        try{
+            Object product = new Product();
+            product = productRepository.findById(id);
+            httpHeaders.setContentType(MediaType.APPLICATION_JSON);
+            return ResponseEntity.ok().headers(httpHeaders).body(product);
+        }
+        catch (Exception e) {
+            throw new Exception("Error occurred during execution of GetProductByIdService");
+        }
+        finally {
+            System.out.println("Execution of GetProductByIdService is done");
+        }
     }
 }

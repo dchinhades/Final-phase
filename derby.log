@@ -1,0 +1,13 @@
+----------------------------------------------------------------
+Tue Mar 02 15:24:04 ULAT 2021:
+Booting Derby version The Apache Software Foundation - Apache Derby - 10.14.2.0 - (1828579): instance a816c00e-0177-f1d2-8f31-000009c63b40 
+on database directory memory:C:\Users\chinzorig.j\Desktop\Main application\9e0cd00a-fdff-4b20-b189-86809b43611d with class loader jdk.internal.loader.ClassLoaders$AppClassLoader@3764951d 
+Loaded from file:/C:/Users/chinzorig.j/.m2/repository/org/apache/derby/derby/10.14.2.0/derby-10.14.2.0.jar
+java.vendor=Oracle Corporation
+java.runtime.version=15.0.2+7-27
+user.dir=C:\Users\chinzorig.j\Desktop\Main application
+os.name=Windows 10
+os.arch=amd64
+os.version=10.0
+derby.system.home=null
+Database Class Loader started - derby.database.classpath=''

@@ -4,11 +4,15 @@ import com.example.FirstSBapplication.Entity.Product;
 import com.example.FirstSBapplication.Repository.ProductRepository;
 import lombok.Data;
 import lombok.RequiredArgsConstructor;
+import org.springframework.http.*;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
+import java.net.URI;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Service
 @RequiredArgsConstructor
@@ -16,11 +20,21 @@ import java.util.List;
 public class GetAllProductsService {
     private final ProductRepository productRepository;
     private final RestTemplate restTemplate;
+    private final HttpHeaders httpHeaders;
+    private final URI baseUri;
 
-    public List<Product> getAllProducts() {
-//        logger.error("Getting all products ");
-        List<Product> products = new ArrayList<>();
-        productRepository.findAll().forEach(products::add);
-        return products;
+    public ResponseEntity<Object> getAllProducts() throws Exception {
+        try{
+            httpHeaders.setContentType(MediaType.APPLICATION_JSON);
+            List<Product> products = new ArrayList<>();
+            productRepository.findAll().forEach(products::add);
+            return ResponseEntity.ok().headers(httpHeaders).body(products);
+        }
+        catch (Exception e) {
+            throw new Exception("Error occurred during execution of GetAllProductsService");
+        }
+        finally {
+            System.out.println("Execution of GetAllProductsService is done");
+        }
     }
 }

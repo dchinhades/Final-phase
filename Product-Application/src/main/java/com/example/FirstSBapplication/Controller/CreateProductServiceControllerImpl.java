@@ -18,13 +18,12 @@ public class CreateProductServiceControllerImpl {
     private final CreateProductService createProductService;
 
     @RequestMapping(path = "/products", method = RequestMethod.POST)
-    public ResponseEntity<Product> addNewProductController(@RequestBody Product product) throws Exception {
+    public ResponseEntity<String> addNewProductController(@RequestBody Product product) throws Exception {
         try {
-            System.out.println("Executed anyway");
             return createProductService.createProduct(product);
 
         } catch (Exception e) {
-            throw new Exception("Error occured during calling service of creating a new object");
+            throw new Exception("Error occurred during calling service of creating a new product");
         }
         finally {
             System.out.println("Execution of CreateProductServiceControllerImpl is done");

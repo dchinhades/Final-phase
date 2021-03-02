@@ -16,16 +16,39 @@ import java.net.URI;
 public class CreateProductService {
     private final ProductRepository productRepository;
     private final RestTemplate restTemplate;
+    private final HttpHeaders httpHeaders;
 
-    public ResponseEntity<Product> createProduct(Product product) throws Exception {
+    public ResponseEntity<String> createProduct(Product product) throws Exception {
         try{
-            URI uri = new URI("http://localhost:8080/products");
-            HttpHeaders httpHeaders = new HttpHeaders();
-            httpHeaders.set("Content-type","application/json");
-            String message = "Created a product successfully";
-            HttpEntity<Product> httpEntity = new HttpEntity<Product>(product,httpHeaders);
-            ResponseEntity<Product> responseData = restTemplate.exchange(uri,HttpMethod.POST,httpEntity,Product.class);
-            return responseData;
+            String message = "Product " + product.getName() + " created successfully";
+            httpHeaders.setContentType(MediaType.APPLICATION_JSON);
+            productRepository.save(product);
+            return new ResponseEntity<String>(message,httpHeaders,HttpStatus.OK);
+        } catch (Exception e) {
+            throw new Exception("Error occurred during creation of a product" + product.getName());
+        }
+        finally {
+            System.out.println("Product " + product.getName() + " created successfully");
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+//    URI uri = new URI("http://localhost:8080/products");
+//            HttpHeaders httpHeaders = new HttpHeaders();
+//            httpHeaders.set("Content-type","application/json");
+//            String message = "Created a product successfully";
+//            HttpEntity<Product> httpEntity = new HttpEntity<Product>(product,httpHeaders);
+//            ResponseEntity<Product> responseData = restTemplate.exchange(uri,HttpMethod.POST,httpEntity,Product.class);
+//            return responseData;
 
 
 //            HttpHeaders httpHeaders = new HttpHeaders();
@@ -36,11 +59,3 @@ public class CreateProductService {
 //            responseInfo.setMessage("Product created successfully");
 //            responseInfo.setData(product);
 //            return new ResponseEntity<>(responseInfo, HttpStatus.OK);
-        } catch (Exception e) {
-            throw new Exception("Error occured during creation of an object");
-        }
-        finally {
-            // logger.info("Method executed");
-        }
-    }
-}
