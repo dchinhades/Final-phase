@@ -1,0 +1,6 @@
+com\example\FirstSBapplication\Entity\Product.class
+com\example\FirstSBapplication\Repository\ProductRepository.class
+com\example\FirstSBapplication\Application.class
+com\example\FirstSBapplication\Controller\ProductController.class
+com\example\FirstSBapplication\Service\ProductService.class
+com\example\FirstSBapplication\Entity\User.class
