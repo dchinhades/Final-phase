@@ -1,7 +1,6 @@
 package com.example.FirstSBapplication.Service;
 
 
-import com.example.FirstSBapplication.Entity.Product;
 import com.example.FirstSBapplication.Repository.ProductRepository;
 import lombok.Data;
 import lombok.RequiredArgsConstructor;
@@ -10,8 +9,6 @@ import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
-
-import java.util.Optional;
 
 @Service
 @RequiredArgsConstructor
@@ -23,8 +20,7 @@ public class GetProductByIdService {
 
     public ResponseEntity<Object> getProductById(int id) throws Exception {
         try{
-            Object product = new Product();
-            product = productRepository.findById(id);
+            Object product = productRepository.findById(id);
             httpHeaders.setContentType(MediaType.APPLICATION_JSON);
             return ResponseEntity.ok().headers(httpHeaders).body(product);
         }

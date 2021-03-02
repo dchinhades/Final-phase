@@ -4,11 +4,12 @@ import com.example.FirstSBapplication.Entity.Product;
 import com.example.FirstSBapplication.Repository.ProductRepository;
 import lombok.Data;
 import lombok.RequiredArgsConstructor;
-import org.springframework.http.*;
+import org.springframework.http.HttpHeaders;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.MediaType;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
-
-import java.net.URI;
 
 @Service
 @RequiredArgsConstructor
@@ -23,7 +24,7 @@ public class CreateProductService {
             String message = "Product " + product.getName() + " created successfully";
             httpHeaders.setContentType(MediaType.APPLICATION_JSON);
             productRepository.save(product);
-            return new ResponseEntity<String>(message,httpHeaders,HttpStatus.OK);
+            return new ResponseEntity<>(message,httpHeaders,HttpStatus.OK);
         } catch (Exception e) {
             throw new Exception("Error occurred during creation of a product" + product.getName());
         }

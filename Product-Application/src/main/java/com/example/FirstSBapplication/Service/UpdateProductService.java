@@ -24,7 +24,7 @@ public class UpdateProductService {
             String message = "Product " + product.getName() + " updated successfully";
             httpHeaders.setContentType(MediaType.APPLICATION_JSON);
             productRepository.save(product);
-            return new ResponseEntity<String>(message,httpHeaders, HttpStatus.OK);
+            return new ResponseEntity<>(message,httpHeaders, HttpStatus.OK);
         }
         catch(Exception e) {
             throw new Exception("Error occurred during updating of a product" + product.getName());

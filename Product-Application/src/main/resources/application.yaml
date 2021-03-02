@@ -34,10 +34,10 @@
 #logging:
 #   file: C:/Users/chinzorig.j/Desktop/First-SB-application/logfiles
 
-#eureka:
-#   client:
-#      register-with-eureka: false
-#      fetch-registry: false
-#
-#server:
-#   port: 8081
+eureka:
+   client:
+      register-with-eureka: false
+      fetch-registry: false
+
+server:
+   port: 8081
