@@ -14,7 +14,7 @@ import java.net.URISyntaxException;
 @SpringBootApplication
 @ComponentScan({"com.example.FirstSBapplication"})
 @EnableEurekaClient
-public class Application {
+public class ProductApplication {
 
 	@Bean
 	public RestTemplate restTemplate() {
@@ -30,7 +30,7 @@ public class Application {
 	}
 
 	public static void main(String[] args) {
-		SpringApplication.run(Application.class, args);
+		SpringApplication.run(ProductApplication.class, args);
 	}
 
 }

@@ -1,6 +1,7 @@
-package com.example.FirstSBapplication.Service;
+package com.example.UserApplication.Service;
 
-import com.example.FirstSBapplication.Repository.ProductRepository;
+import com.example.UserApplication.Entity.User;
+import com.example.UserApplication.Repository.UserRepository;
 import lombok.Data;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpHeaders;
@@ -13,23 +14,22 @@ import org.springframework.web.client.RestTemplate;
 @Service
 @RequiredArgsConstructor
 @Data
-public class DeleteProductService {
-    private final ProductRepository productRepository;
+public class UpdateUserService {
+    private final UserRepository userRepository;
     private final RestTemplate restTemplate;
     private final HttpHeaders httpHeaders;
-
-    public ResponseEntity<String> deleteProduct(int id) throws Exception {
-        try{
-            String message = "Product " + productRepository.findById(id).get().getName() + " deleted successfully";
+    public ResponseEntity<String> updateUser(User user, int userId) throws Exception {
+        try {
+            String message = "User " + userRepository.findById(userId).get().getUserName() + " updated successfully";
             httpHeaders.setContentType(MediaType.APPLICATION_JSON);
-            productRepository.deleteById(id);
+            userRepository.save(user);
             return new ResponseEntity<>(message,httpHeaders, HttpStatus.OK);
         }
         catch (Exception e) {
-            throw new Exception("Error occurred during execution of DeleteProductService");
+            throw new Exception("Error occurred during execution of UpdateUserService");
         }
         finally {
-            System.out.println("Execution of DeleteProductService is done");
+            System.out.println("Execution of UpdateUserService is done");
         }
     }
 }

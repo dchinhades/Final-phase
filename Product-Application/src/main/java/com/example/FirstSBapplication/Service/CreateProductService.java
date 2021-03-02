@@ -26,10 +26,10 @@ public class CreateProductService {
             productRepository.save(product);
             return new ResponseEntity<>(message,httpHeaders,HttpStatus.OK);
         } catch (Exception e) {
-            throw new Exception("Error occurred during creation of a product" + product.getName());
+            throw new Exception("Error occurred during execution of CreateProductService");
         }
         finally {
-            System.out.println("Product " + product.getName() + " created successfully");
+            System.out.println("Execution of CreateProductService is done");
         }
     }
 }

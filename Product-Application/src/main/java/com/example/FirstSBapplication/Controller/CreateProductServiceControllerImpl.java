@@ -18,7 +18,7 @@ public class CreateProductServiceControllerImpl {
     private final CreateProductService createProductService;
 
     @RequestMapping(path = "/products", method = RequestMethod.POST)
-    public ResponseEntity<String> addNewProductController(@RequestBody Product product) throws Exception {
+    public ResponseEntity<String> createProductController(@RequestBody Product product) throws Exception {
         try {
             return createProductService.createProduct(product);
 

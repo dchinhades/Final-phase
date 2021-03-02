@@ -22,10 +22,10 @@ public class DeleteProductServiceControllerImpl{
             return deleteProductService.deleteProduct(id);
 
         } catch (Exception e) {
-            throw new Exception("Error occurred during calling service of creating a new product");
+            throw new Exception("Error occurred during calling service of deleting a new product");
         }
         finally {
-            System.out.println("Execution of CreateProductServiceControllerImpl is done");
+            System.out.println("Execution of DeleteProductServiceControllerImpl is done");
         }
     }
 }
