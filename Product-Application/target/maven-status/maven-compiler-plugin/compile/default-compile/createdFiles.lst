@@ -1,6 +1,13 @@
 com\example\FirstSBapplication\Entity\Product.class
 com\example\FirstSBapplication\Repository\ProductRepository.class
+com\example\FirstSBapplication\Service\DeleteProductService.class
 com\example\FirstSBapplication\Application.class
-com\example\FirstSBapplication\Controller\ProductController.class
-com\example\FirstSBapplication\Service\ProductService.class
-com\example\FirstSBapplication\Entity\User.class
+com\example\FirstSBapplication\Controller\GetAllProductsServiceControllerImpl.class
+com\example\FirstSBapplication\Controller\UpdateProductServiceControllerImpl.class
+com\example\FirstSBapplication\Service\UpdateProductService.class
+com\example\FirstSBapplication\Service\GetProductByIdService.class
+com\example\FirstSBapplication\Controller\CreateProductServiceControllerImpl.class
+com\example\FirstSBapplication\Service\GetAllProductsService.class
+com\example\FirstSBapplication\Controller\GetProductByIdServiceControllerImpl.class
+com\example\FirstSBapplication\Service\CreateProductService.class
+com\example\FirstSBapplication\Controller\DeleteProductServiceControllerImpl.class
