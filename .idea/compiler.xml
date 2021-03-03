@@ -7,6 +7,7 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="Ecommerce-Application" />
         <module name="Discovery-Server" />
         <module name="User-Application" />
         <module name="First-SB-application" />
@@ -14,6 +15,7 @@
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="Discovery-Server" target="15" />
+      <module name="Ecommerce-Application" target="15" />
       <module name="First-SB-application" target="15" />
       <module name="User-Application" target="15" />
     </bytecodeTargetLevel>
@@ -21,6 +23,7 @@
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="Discovery-Server" options="-parameters" />
+      <module name="Ecommerce-Application" options="-parameters" />
       <module name="First-SB-application" options="-parameters" />
       <module name="User-Application" options="-parameters" />
     </option>
