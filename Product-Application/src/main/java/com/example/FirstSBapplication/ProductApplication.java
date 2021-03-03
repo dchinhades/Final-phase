@@ -12,7 +12,7 @@ import java.net.URI;
 import java.net.URISyntaxException;
 
 @SpringBootApplication
-@ComponentScan({"com.example.FirstSBapplication"})
+//@ComponentScan({"com.example.FirstSBapplication"})
 @EnableEurekaClient
 public class ProductApplication {
 

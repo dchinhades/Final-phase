@@ -20,7 +20,7 @@ public class DeleteUserService {
 
     public ResponseEntity<String> deleteUser(int userId) throws Exception {
         try{
-            String message = "Deleted usesr " + userRepository.findById(userId).get().getUserName() + " deleted successfully";
+            String message = "Deleted user " + userRepository.findById(userId).get().getUserName() + " deleted successfully";
             httpHeaders.setContentType(MediaType.APPLICATION_JSON);
             return new ResponseEntity<>(message,httpHeaders, HttpStatus.OK);
         }
