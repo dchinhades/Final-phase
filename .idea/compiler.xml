@@ -9,6 +9,7 @@
         <outputRelativeToContentRoot value="true" />
         <module name="Ecommerce-Application" />
         <module name="Discovery-Server" />
+        <module name="Purchase-Application" />
         <module name="User-Application" />
         <module name="First-SB-application" />
       </profile>
@@ -17,6 +18,7 @@
       <module name="Discovery-Server" target="15" />
       <module name="Ecommerce-Application" target="15" />
       <module name="First-SB-application" target="15" />
+      <module name="Purchase-Application" target="15" />
       <module name="User-Application" target="15" />
     </bytecodeTargetLevel>
   </component>
@@ -25,6 +27,7 @@
       <module name="Discovery-Server" options="-parameters" />
       <module name="Ecommerce-Application" options="-parameters" />
       <module name="First-SB-application" options="-parameters" />
+      <module name="Purchase-Application" options="-parameters" />
       <module name="User-Application" options="-parameters" />
     </option>
   </component>

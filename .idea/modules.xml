@@ -6,6 +6,7 @@
       <module fileurl="file://$PROJECT_DIR$/Ecommerce-Application/Ecommerce-Application.iml" filepath="$PROJECT_DIR$/Ecommerce-Application/Ecommerce-Application.iml" />
       <module fileurl="file://$PROJECT_DIR$/Product-Application/First-SB-application.iml" filepath="$PROJECT_DIR$/Product-Application/First-SB-application.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/Main application.iml" filepath="$PROJECT_DIR$/.idea/Main application.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Purchase-Application/Purchase-Application.iml" filepath="$PROJECT_DIR$/Purchase-Application/Purchase-Application.iml" />
       <module fileurl="file://$PROJECT_DIR$/User-Application/User-Application.iml" filepath="$PROJECT_DIR$/User-Application/User-Application.iml" />
     </modules>
   </component>
