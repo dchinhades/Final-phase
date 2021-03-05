@@ -1,5 +1,6 @@
 package com.example.UserApplication.Controller;
 
+import com.example.UserApplication.Entity.User;
 import com.example.UserApplication.Service.UserProductsService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,7 +18,7 @@ public class UserProductsServiceControllerImpl {
     private final UserProductsService userProductsService;
 
     @RequestMapping(path = "/users/{userId}/products",method = RequestMethod.GET)
-    public ResponseEntity<Object[]> userProductsController(@PathVariable int userId) throws Exception {
+    public ResponseEntity<User> userProductsController(@PathVariable int userId) throws Exception {
         try {
             return userProductsService.getUserProducts(userId);
         } catch (Exception e) {

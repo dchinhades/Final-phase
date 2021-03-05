@@ -1,11 +1,11 @@
 ----------------------------------------------------------------
-Thu Mar 04 11:37:30 ULAT 2021:
-Booting Derby version The Apache Software Foundation - Apache Derby - 10.14.2.0 - (1828579): instance a816c00e-0177-fb4f-db99-000005244010 
-on database directory memory:C:\Users\chinzorig.j\Desktop\Main-app\db74259c-ceeb-46f7-a912-b8c66b464905 with class loader jdk.internal.loader.ClassLoaders$AppClassLoader@3764951d 
+Fri Mar 05 10:41:54 ULAT 2021:
+Booting Derby version The Apache Software Foundation - Apache Derby - 10.14.2.0 - (1828579): instance a816c00e-0178-0043-4d8e-000003663840 
+on database directory memory:C:\Users\chinzorig.j\Desktop\Main-app-before-all-the-shits\c4d4cd51-85f5-413d-8d50-637f3fd7a7b2 with class loader jdk.internal.loader.ClassLoaders$AppClassLoader@3764951d 
 Loaded from file:/C:/Users/chinzorig.j/.m2/repository/org/apache/derby/derby/10.14.2.0/derby-10.14.2.0.jar
 java.vendor=Oracle Corporation
 java.runtime.version=15.0.2+7-27
-user.dir=C:\Users\chinzorig.j\Desktop\Main-app
+user.dir=C:\Users\chinzorig.j\Desktop\Main-app-before-all-the-shits
 os.name=Windows 10
 os.arch=amd64
 os.version=10.0

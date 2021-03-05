@@ -1,5 +1,6 @@
 package com.example.UserApplication.Service;
 
+import com.example.UserApplication.Entity.User;
 import com.example.UserApplication.Repository.UserRepository;
 import lombok.Data;
 import lombok.RequiredArgsConstructor;
@@ -19,12 +20,13 @@ public class UserProductsService {
     private final RestTemplate restTemplate;
     private final HttpHeaders httpHeaders;
 
-    public ResponseEntity<Object[]> getUserProducts(int userId) throws Exception {
+    public ResponseEntity<User> getUserProducts(int userId) throws Exception {
         try{
-            Object user = userRepository.findById(userId);
+            User user = userRepository.findById(userId).get();
             httpHeaders.setContentType(MediaType.APPLICATION_JSON);
             Object[] userProducts=restTemplate.getForObject("http://localhost:8080/products",Object[].class);
-            return ResponseEntity.ok().headers(httpHeaders).body(userProducts);
+            user.setPurchasedProds(userProducts);
+            return ResponseEntity.ok().headers(httpHeaders).body(user);
         }
         catch (Exception e) {
             throw new Exception("Error occurred during execution of UserProductsService");
